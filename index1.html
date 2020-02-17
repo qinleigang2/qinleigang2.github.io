@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;text-decoration: none;color: #000;list-style: none;}
+			.header{
+				display: flex;
+				text-align: center;
+			}
+			.header>div{
+				flex: 1;
+			}
+			.ul{
+				display: none;
+			}
+			.ul li{
+				background: purple;
+				color: #fff;
+			}
+			.header>div:hover .ul{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div style="height: 50px;line-height: 50px;background: #ccc;" class="header">
+				<div><a href="#/header1">首页</a></div>
+				<div><a href="#/header2">关于我们</a>
+					<ul class="ul">
+						<li><a href="#/header2/header2_list/list1">企业理念</a></li>
+						<li><a href="#/header2/header2_list/list2">愿景使命</a></li>
+						<li><a href="#/header2/header2_list/list3">发展计划</a></li>
+					</ul>
+				</div>
+				<div><a href="#/header3">产品中心</a>
+					<ul class="ul">
+						<li><a href="#/header3/header3_list/list1">外用药</a></li>
+						<li><a href="#/header3/header3_list/list2">妇科药</a></li>
+						<li><a href="#/header3/header3_list/list3">小儿用药</a></li>
+						<li><a href="#/header3/header3_list/list4">感冒用药</a></li>
+						<li><a href="#/header3/header3_list/list5">肠胃用药</a></li>
+					</ul>
+				</div>
+				<div><a href="#/header4">研发中心</a>
+					<ul class="ul">
+						<li><a href="#/header4/header4_list/list1">研发团队</a></li>
+						<li><a href="#/header4/header4_list/list2">技术力量</a></li>
+						<li><a href="#/header4/header4_list/list3">研发展望</a></li>
+					</ul>
+				</div>
+				<div><a href="#/header5">特效药品</a>
+					<ul class="ul">
+						<li><a href="#/header5/header5_list/list1">特效药原理</a></li>
+						<li><a href="#/header5/header5_list/list2">特效药受众对象</a></li>
+						<li><a href="#/header5/header5_list/list3">特效药常见问题</a></li>
+					</ul>
+				</div>
+				<div><a href="#/header6">资讯中心</a></div>
+				<div><a href="#/header7">关于我们</a></div>
+			</div>
+			<div>
+				<router-view></router-view>
+			</div>
+		</div>
+		<template id="index1">
+			<div>
+				首页
+			</div>
+		</template>
+		<template id="index6">
+			<div>
+				资讯中心
+			</div>
+		</template>
+		<template id="index7">
+			<div>
+				关于我们
+			</div>
+		</template>
+		<template id="index2">
+			<div>
+				<div style="line-height: 50px;">
+					<div><a href="#/header2/header2_list/list1">企业理念</a></div>
+					<div><a href="#/header2/header2_list/list2">愿景使命</a></div>
+					<div><a href="#/header2/header2_list/list3">发展计划</a></div>
+				</div>
+				<div>
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="index3">
+			<div>
+				<div style="line-height: 50px;">
+					<div><a href="#/header3/header3_list/list1">外用药</a></div>
+					<div><a href="#/header3/header3_list/list2">妇科药</a></div>
+					<div><a href="#/header3/header3_list/list3">小儿用药</a></div>
+					<div><a href="#/header3/header3_list/list4">感冒用药</a></div>
+					<div><a href="#/header3/header3_list/list5">肠胃用药</a></div>
+				</div>
+				<div>
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="index4">
+			<div>
+				<div style="line-height: 50px;">
+					<div><a href="#/header4/header4_list/list1">研发团队</a></div>
+					<div><a href="#/header4/header4_list/list2">技术力量</a></div>
+					<div><a href="#/header4/header4_list/list3">研发展望</a></div>
+				<div>
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		<template id="index5">
+			<div>
+				<div style="line-height: 50px;">
+					<div><a href="#/header5/header5_list/list1">特效药原理</a></div>
+					<div><a href="#/header5/header5_list/list2">特效药受众对象</a></div>
+					<div><a href="#/header5/header5_list/list3">特效药常见问题</a></div>
+				</div>
+				<div>
+					<router-view></router-view>
+				</div>
+			</div>
+		</template>
+		
+		<template id="header1_list">
+			<div>
+				
+			</div>
+		</template>
+		<template id="header2_list">
+			<div>
+				<div style="font-size: 50px;color: red;">
+					{{$route.params.type}}
+				</div>
+			</div>
+		</template>
+		<template id="header3_list">
+			<div>
+				<div style="font-size: 50px;color: red;">
+					{{$route.params.type}}
+				</div>
+			</div>
+		</template>
+		<template id="header4_list">
+			<div>
+				<div  style="font-size: 50px;color: red;">
+					{{$route.params.type}}
+				</div>
+			</div>
+		</template>
+		<template id="header5_list">
+			<div>
+				<div style="font-size: 50px;color: red;">
+					{{$route.params.type}}
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="vue-router.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var index1={template:'#index1'}
+		var index2={template:'#index2'}
+		var index3={template:'#index3'}
+		var index4={template:'#index4'}
+		var index5={template:'#index5'}
+		var index6={template:'#index6'}
+		var index7={template:'#index7'}
+		var header1_list={template:'#header2_list'}
+		var header2_list={template:'#header2_list'}
+		var header3_list={template:'#header2_list'}
+		var header4_list={template:'#header2_list'}
+		var header5_list={template:'#header2_list'}
+		var routes=[
+			{path:'/header1',name:'index1',component:index1,},
+			{path:'/header2',name:'index2',component:index2,
+			redirect:'/header2/header2_list/list1',
+				children:[
+					{path:'header2_list/:type',name:'header2_list',component:header2_list}
+				]
+			},
+			{path:'/header3',name:'index3',component:index3,
+			redirect:'/header3/header3_list/list1',
+				children:[
+					{path:'header3_list/:type',name:'header3_list',component:header3_list}
+				]
+			},
+			{path:'/header4',name:'index4',component:index4,
+			redirect:'/header4/header4_list/list1',
+				children:[
+					{path:'header4_list/:type',name:'header4_list',component:header4_list}
+				]
+			},
+			{path:'/header5',name:'index5',component:index5,
+			redirect:'/header5/header5_list/list1',
+				children:[
+					{path:'header5_list/:type',name:'header5_list',component:header5_list}
+				]
+			},
+			{path:'/header6',name:'index6',component:index6},
+			{path:'/header7',name:'index7',component:index7},
+		]
+		var router=new VueRouter({
+			routes
+		})
+		new Vue({
+			el:'#box',
+			router
+		})
+	
+	</script>
+</html>
